@@ -9,5 +9,10 @@ module ControllerLevelHelpers
 
   def initialize_controller_helpers(helper)
     helper.extend ControllerLevelHelpers
+    helper.class.include ::Rails.application.routes.url_helpers
+
+    if ::Rails.application.routes.respond_to?(:mounted_helpers)
+      helper.class.include ::Rails.application.routes.mounted_helpers
+    end
   end
 end
