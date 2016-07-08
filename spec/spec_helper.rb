@@ -10,6 +10,7 @@ require 'rspec/collection_matchers'
 require 'rspec/its'
 require 'rspec/rails'
 require 'rspec/active_model/mocks'
+require 'rails-controller-testing'
 
 require 'capybara/poltergeist'
 

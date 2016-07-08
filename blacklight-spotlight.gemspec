@@ -19,7 +19,7 @@ these collections.)
 
   s.required_ruby_version = '~> 2.2'
 
-  s.add_dependency 'rails', '~> 4.0', '>= 4.2.0'
+  s.add_dependency 'rails', '>= 4.2.0', '< 6'
   s.add_dependency 'blacklight', '~> 6.3'
   s.add_dependency 'autoprefixer-rails'
   s.add_dependency 'cancancan'
@@ -55,6 +55,7 @@ these collections.)
   s.add_development_dependency 'rspec-its'
   s.add_development_dependency 'rspec-activemodel-mocks'
   s.add_development_dependency 'rspec-collection_matchers'
+  s.add_development_dependency 'rails-controller-testing'
   s.add_development_dependency 'capybara', '>= 2.5.0'
   s.add_development_dependency 'rubocop', '~> 0.41', '>= 0.41.2'
   s.add_development_dependency 'rubocop-rspec'
