@@ -17,9 +17,9 @@ Spotlight.BlockLimits.prototype.checkBlockTypeLimitOnAdd = function() {
   var editor = this.editor;
 
   return function(block) {
-    var control = editor.$outer.find("a[data-type='" + block.blockCSSClass() + "']");
+    var control = $("a[data-type='" + block.blockCSSClass() + "']", editor.outer);
 
-    control.toggleClass("disabled", !editor.block_manager.canAddBlockType(block.class()));
+    control.toggleClass("disabled", !editor.blockManager.canAddBlockType(block.class()));
   }
 }
 
@@ -28,14 +28,14 @@ Spotlight.BlockLimits.prototype.checkGlobalBlockTypeLimit = function() {
   var editor = this.editor;
 
   return function() {
-    $.each(editor.block_manager.blockTypes, function(type) {
+    $.each(editor.blockManager.blockTypes, function(i, type) {
       var block_type = SirTrevor.Blocks[type].prototype;
 
-      var control = editor.$outer.find(".st-block-control[data-type='" + block_type.type + "']");
-      if (editor.block_manager._getBlockTypeLimit(type) < 0) {
+      var control = $(editor.outer).find(".st-block-control[data-type='" + block_type.type + "']");
+      if (editor.blockManager._getBlockTypeLimit(type) < 0) {
         control.remove();
       } else {
-        control.toggleClass("disabled", !editor.block_manager.canAddBlockType(type));
+        control.toggleClass("disabled", !editor.blockManager.canAddBlockType(type));
       }
     });
   }

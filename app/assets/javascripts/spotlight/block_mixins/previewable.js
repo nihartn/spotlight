@@ -45,9 +45,9 @@
     },
 
     _prependUIComponent: function(component, className, callback) {
-      this.$ui.prepend(component.render().$el);
+      $(this.ui).prepend(component.render().$el);
       if (className && callback) {
-        this.$ui.on('click', className, callback);
+        $(this.ui).on('click', className, callback);
       }
     },
     
@@ -65,8 +65,8 @@
         $btn.attr('disabled', 'disabled');
 
         $.post(context.previewUrl(context), { block: JSON.stringify(context.getData()) }, function(preview) {
-          context.renderPreview(preview).insertAfter(context.$inner);
-          context.$inner.hide();
+          context.renderPreview(preview).insertAfter(context.inner);
+          context.inner.hide();
 
           context.afterPreviewLoad();
         });
@@ -90,7 +90,7 @@
 
       return function(event) {
         event.stopPropagation();
-        context.$inner.show();
+        context.inner.show();
         $(this).closest('.preview').remove();
         $btn.removeAttr('disabled');
       }

@@ -3,25 +3,23 @@
 Spotlight.onLoad(function(){
 
   SirTrevor.setDefaults({
+    iconUrl: <%= asset_path('sir-trevor-icons.svg').to_json %>,
     uploadUrl: $('[data-attachment-endpoint]').data('attachment-endpoint')
   });
 
   var instance = $('.js-st-instance').first();
 
   if (instance.length) {
-
     var editor = new SirTrevor.Editor({
-      el: instance,
+      el: instance[0],
+      blockTypes:["Heading", "Text","List","Quote","Iframe", "Video", "Browse", "Oembed", "Pages", "Rule", "SearchResult", "SolrDocuemntsCarousel", "SolrDocumentsEmbed", "SolrDocumentsFeatures", "SolrDocumentsGrid", "UploadedItems"],
+      defaultType:["Text"],
       onEditorRender: function() {
         serializeObservedForms(observedForms());
-      },
-      blockTypeLimits: {
-        "SearchResults": 1,
-        "Tweet": -1
       }
     });
 
-    new Spotlight.BlockLimits(editor).enforceLimits();
+    // new Spotlight.BlockLimits(editor).enforceLimits();
   }
 
   $('.carousel').carousel();

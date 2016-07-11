@@ -10,7 +10,7 @@ SirTrevor.Blocks.SearchResults =  (function(){
 
     searches_key: "slug",
     view_key: "view",
-    textable: false,
+    plustextable: false,
 
     content: function() {
       return _.template([this.items_selector()].join("<hr />\n"))(this);

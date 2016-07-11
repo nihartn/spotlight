@@ -21,7 +21,7 @@ module Spotlight
     require 'carrierwave'
     require 'carrierwave/crop'
     require 'social-share-button'
-    require 'lodash-rails'
+    require 'underscore-rails'
     require 'github/markup'
     require 'sir_trevor_rails'
     require 'openseadragon'

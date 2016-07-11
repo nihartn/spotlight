@@ -1,6 +1,6 @@
 SirTrevor.Blocks.UploadedItems = (function(){
   return Spotlight.Block.Resources.extend({
-    textable: true,
+    plustextable: true,
     uploadable: true,
     autocompleteable: false,
 

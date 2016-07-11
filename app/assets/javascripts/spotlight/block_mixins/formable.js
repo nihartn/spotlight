@@ -16,9 +16,9 @@
 
     _serializeData: function() {
       
-      var data = this.$(":input,textarea,select").not(':input:radio').serializeJSON();
+      var data = $(":input,textarea,select", this.inner).not(':input:radio').serializeJSON();
 
-      this.$(':input:radio:checked').each(function(index, input) {
+      $(':input:radio:checked', this.inner).each(function(index, input) {
         var key = $(input).data('key') || input.getAttribute('name');
 
         if (!key.match("\\[")) {
@@ -46,7 +46,7 @@
     },
     
     loadFormDataByKey: function(data) {
-      this.$(':input').not('button,:input[type=hidden]').each(function(index, input) {
+      $(':input', this.inner).not('button,:input[type=hidden]').each(function(index, input) {
         var key = $(input).data('key') || input.getAttribute('name');
 
         if (key) {

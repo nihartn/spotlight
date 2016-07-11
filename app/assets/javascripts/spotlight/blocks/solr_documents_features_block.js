@@ -3,7 +3,7 @@
 SirTrevor.Blocks.SolrDocumentsFeatures = (function(){
 
   return SirTrevor.Blocks.SolrDocuments.extend({
-    textable: false,
+    plustextable: false,
     type: "solr_documents_features",
 
     icon_name: "item_features",

@@ -3,7 +3,7 @@
 SirTrevor.Blocks.SolrDocumentsCarousel = (function(){
 
   return SirTrevor.Blocks.SolrDocuments.extend({
-    textable: false,
+    plustextable: false,
     type: "solr_documents_carousel",
 
     icon_name: "item_carousel",
